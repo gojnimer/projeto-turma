@@ -1,32 +1,44 @@
-
-    
-    <p [ngStyle]="
+<p [ngStyle]="
     {
      'background-color': (ativo ? 'blue' : 'gray'),
      'color': (ativo ? 'white' : 'black'),
      'fontWeight': (ativo ? 'bold' : 'normal')
-    }" 
-    >{{data}}</p>
-    
-    <input  type="text" value="{{data}}" > 
-    
-    <input type="teste" [value]="data" > 
-    
-    <input type="text" [value]="data" (input)="data = $event.target.value" />
-    
-    <input type="text" [ngModel]="data" (ngModelChange)="data = $event;" />
-    
-    <input type="text" [(ngModel)]="data" />
-    
-    <input type="text" bindon-ngModel="data" />
+    }">{{data}}</p>
+
+<input type="text" value="{{data}}">
+
+<input type="teste" [value]="data">
+
+<input type="text" [value]="data" (input)="data = $event.target.value" />
+
+<input type="text" [ngModel]="data" (ngModelChange)="data = $event;" />
+
+<input type="text" [(ngModel)]="data" />
+
+<input type="text" bindon-ngModel="data" />
 
 
- <hr>
-    <form [formGroup]="formPessoa"  (ngSubmit)="onSubmit()">
-        <input placeholder="nome" formControlName="nome" type="text">
-        <input placeholder="sobrenome" formControlName="sobrenome" type="text">
-        <button type="submit">Submit</button>
-    </form>
-    
- 
-  
+<hr>
+<form [formGroup]="formPessoa" (ngSubmit)="onSubmit()">
+    <input placeholder="nome" formControlName="nome" type="text">
+    <input placeholder="sobrenome" formControlName="sobrenome" type="text">
+    <button type="submit">Submit</button>
+</form>
+
+
+
+<hr>
+
+<div *ngFor="let cliente of listarClientes; let i = index">
+    <div class="alert alert-primary" role="alert" (click)="mostrarNome(cliente.nome,i)">
+        {{cliente.nome}} {{cliente.sobrenome}} - {{i}}
+      </div>
+</div>
+
+<hr>
+
+<div *ngFor="let pokemon of pokemons.value; let i = index">
+    <div class="alert alert-primary" role="alert" (click)="mostrarNome(pokemon.nome,i)">
+        {{pokemon.name}} {{i}}
+      </div>
+</div>
