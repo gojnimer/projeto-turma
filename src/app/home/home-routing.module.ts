@@ -1,3 +1,4 @@
+import { DataBindingComponent } from './data-binding/data-binding.component';
 import { MainComponent } from './main/main.component';
 
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ const routes: Routes = [
 
 
   {path:"", component:MainComponent, canActivate:[AuthGuard]},
+  {path:"data-binding", component:DataBindingComponent, canActivate:[AuthGuard]},
 
  
  

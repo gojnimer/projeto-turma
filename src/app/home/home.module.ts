@@ -1,18 +1,21 @@
+import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { NavbarService } from './../components/navbar.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, DataBindingComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule
   ],
-  exports:[MainComponent],
+  exports:[MainComponent,DataBindingComponent],
   providers: [NavbarService],
   
 })
