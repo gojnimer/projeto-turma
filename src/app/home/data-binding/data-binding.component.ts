@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
 
   data:any = 'teste'
   teste = "checkbox";
+  ativo = false;
+  formPessoa:FormGroup;
 
   ngOnInit(){
-    
+
+    this.formPessoa = this.fb.group({
+      nome:['',[Validators.email,Validators.required]],
+      sobrenome:['',[Validators.required]]
+    })
+
+  }
+
+  onSubmit(){
+    this.ativo = !this.ativo;
+    console.log(this.formPessoa);
   }
 
  

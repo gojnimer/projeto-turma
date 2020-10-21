@@ -1,6 +1,12 @@
 
     
-    <p >{{data}}</p>
+    <p [ngStyle]="
+    {
+     'background-color': (ativo ? 'blue' : 'gray'),
+     'color': (ativo ? 'white' : 'black'),
+     'fontWeight': (ativo ? 'bold' : 'normal')
+    }" 
+    >{{data}}</p>
     
     <input  type="text" value="{{data}}" > 
     
@@ -16,9 +22,9 @@
 
 
  <hr>
-    <form>
-        <input placeholder="nome" type="text">
-        <input placeholder="sobrenome" type="text">
+    <form [formGroup]="formPessoa"  (ngSubmit)="onSubmit()">
+        <input placeholder="nome" formControlName="nome" type="text">
+        <input placeholder="sobrenome" formControlName="sobrenome" type="text">
         <button type="submit">Submit</button>
     </form>
     
