@@ -1,10 +1,10 @@
 
     
-
+    <p >{{data}}</p>
     
-    <input type="text" value="{{data}}" > 
+    <input  type="text" value="{{data}}" > 
     
-    <input type="text" [value]="data" > 
+    <input type="teste" [value]="data" > 
     
     <input type="text" [value]="data" (input)="data = $event.target.value" />
     
@@ -13,7 +13,14 @@
     <input type="text" [(ngModel)]="data" />
     
     <input type="text" bindon-ngModel="data" />
-    
+
+
+ <hr>
+    <form>
+        <input placeholder="nome" type="text">
+        <input placeholder="sobrenome" type="text">
+        <button type="submit">Submit</button>
+    </form>
     
  
   

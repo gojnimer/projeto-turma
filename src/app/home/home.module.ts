@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { NavbarService } from './../components/navbar.service';
 import { NgModule } from '@angular/core';
@@ -13,7 +13,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[MainComponent,DataBindingComponent],
   providers: [NavbarService],

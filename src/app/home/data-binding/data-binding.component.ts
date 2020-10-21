@@ -9,9 +9,15 @@ export class DataBindingComponent implements OnInit {
 
   constructor() { }
 
-  data = 'teste'
+  data:any = 'teste'
+  teste = "checkbox";
 
-  ngOnInit(): void {
+  ngOnInit(){
+    
   }
+
+ 
+
+
 
 }
