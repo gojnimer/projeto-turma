@@ -1,1 +1,19 @@
-<p>data-binding works!</p>
+
+    
+
+    
+    <input type="text" value="{{data}}" > 
+    
+    <input type="text" [value]="data" > 
+    
+    <input type="text" [value]="data" (input)="data = $event.target.value" />
+    
+    <input type="text" [ngModel]="data" (ngModelChange)="data = $event;" />
+    
+    <input type="text" [(ngModel)]="data" />
+    
+    <input type="text" bindon-ngModel="data" />
+    
+    
+ 
+  
